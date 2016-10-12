@@ -1,0 +1,9 @@
+package br.edu.ifsp.regesc.app;
+
+public class App {
+
+	public static void main(String[] args) {
+
+	}
+
+}
