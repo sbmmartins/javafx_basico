@@ -1,30 +1,29 @@
 
 package br.edu.ifsp.regesc.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Student {
-    private long id;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
     private String name;
-    private int age;
+    private Integer age;
 
     public Student() {
-    	this.id = -1;
-    	this.age = -1;
+    	this.id = new Long(-1);
+    	this.age = new Integer(-1);
     }
 
     public Student(String name, int age) {
-        this.id = -1;
+    	this.id = new Long(-1);
         this.name = name;
-        this.age = age;
+        this.age = new Integer(age);
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -34,15 +33,24 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+    public Long getId() {
+		return id;
+	}
 
-    @Override
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	@Override
     public String toString() {
         return "Student{" + "id=" + id + ", name=" + name + ", age=" + age + '}';
     }
